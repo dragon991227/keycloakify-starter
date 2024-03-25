@@ -57,7 +57,7 @@ label {
 }
 
 #kc-page-title {
-  @apply flex items-center justify-center pt-1 pb-8;
+  @apply flex items-center text-2xl justify-center pt-1 pb-8;
 }
 .login-pf-page {
   @apply w-full px-8;
@@ -97,6 +97,22 @@ label {
 
 .alert {
   @apply !text-xs !bg-layer-light-50 !p-2 rounded !w-full !mb-5 !border !border-layer-light-200;
+}
+
+.alert-success {
+  @apply !bg-green-700/60 !text-white !border !border-green-200;
+}
+
+.alert-error {
+  @apply !bg-red-700/60 !text-white !border !border-red-200;
+}
+
+.alert-warning {
+  @apply !bg-orange-500/60 !text-white !border !border-orange-200;
+}
+
+.alert-info {
+  @apply !bg-sky-600/60 !text-white !border !border-sky-200;
 }
 
 .my-color {

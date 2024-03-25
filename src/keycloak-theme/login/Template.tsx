@@ -57,29 +57,30 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
     }
 
     return (
-        <div className={clsx("grid grid-cols-1 md:grid-cols-2 w-screen h-screen overflow-hidden")}>
-            <div className={clsx("col-span-1 flex items-center justify-center bg-layer-light-50 h-full overflow-auto")}>
+        <div className={clsx("w-screen h-screen flex flex-col md:flex-row justify-center overflow-hidden bg-white text-[#1a3764]")}>
+            <div className="flex flex-col md:hidden justify-center items-center px-8">
+                <img src="https://pbxflex.app/company-logo_light.png" alt="logo" width={200} height={40} className="w-1/2 object-contain" />
+                <div className="text-xl font-bold">Welcome to PBXflex app</div>
+            </div>
+            <div className={clsx("md:h-full relative w-full md:w-auto md:min-w-[600px] max-w-full flex flex-col items-center justify-center p-8 h-full overflow-auto py-12")}>
                 <div className={getClassName("kcLoginClass")}>
                     <div id="kc-header" className={getClassName("kcHeaderClass")}>
                         <div
                             id="kc-header-wrapper"
-                            className={clsx(getClassName("kcHeaderWrapperClass"), '!text-blue-500')}
+                            className={
+                                clsx(
+                                    getClassName("kcHeaderWrapperClass"),
+                                    // '!block !text-2xl'
+                                )}
                             style={{ "fontFamily": '"Work Sans"' }}
                         >
-                            {/* 
-                        Here we are referencing the `keycloakify-logo.png` in the `public` directory.  
-                        When possible don't use this approach, instead ...
-                    */}
-                            {/* <img src={`${import.meta.env.BASE_URL}keycloakify-logo.png`} alt="Keycloakify logo" width={50} /> */}
-                            {msg("loginTitleHtml", realm.displayNameHtml)}!!!
-                            {/* ...rely on the bundler to import your assets, it's more efficient */}
-                            {/* <img src={keycloakifyLogoPngUrl} alt="Keycloakify logo" width={50} /> */}
+                            {msg("loginTitleHtml", realm.displayNameHtml)}
                         </div>
                     </div>
 
                     <div className={clsx(getClassName("kcFormCardClass"), displayWide && getClassName("kcFormCardAccountClass"))}>
                         <header className={getClassName("kcFormHeaderClass")}>
-                            {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
+                            {/* {realm.internationalizationEnabled && (assert(locale !== undefined), true) && locale.supported.length > 1 && (
                                 <div id="kc-locale">
                                     <div id="kc-locale-wrapper" className={getClassName("kcLocaleWrapperClass")}>
                                         <div className="kc-dropdown" id="kc-locale-dropdown">
@@ -98,7 +99,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                         </div>
                                     </div>
                                 </div>
-                            )}
+                            )} */}
                             {!(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
                                 displayRequiredFields ? (
                                     <div className={getClassName("kcContentWrapperClass")}>
@@ -218,8 +219,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     backgroundImage: "url(https://pbxflex.app/assets/image/landing/welcome.png)",
                     height: "100%",
                 }}
-                className="hidden bg-left-top bg-cover md:flex flex-col col-span-1 gap-4 justify-center items-center text-white"
+                className="bg-left-top bg-cover flex-1 md:h-full overflow-hidden hidden md:block"
             >
-            </div></div>
+            </div>
+        </div>
     );
 }
