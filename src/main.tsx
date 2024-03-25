@@ -16,13 +16,14 @@ const App = lazy(() => import("./App"));
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <Suspense>
-            {(()=>{
+            {(() => {
 
-                if( kcLoginThemeContext !== undefined ){
-                    return <KcLoginThemeApp kcContext={kcLoginThemeContext} />;
+                if (kcLoginThemeContext !== undefined) {
+                    return (
+                        <KcLoginThemeApp kcContext={kcLoginThemeContext} />)
                 }
 
-                if( kcAccountThemeContext !== undefined ){
+                if (kcAccountThemeContext !== undefined) {
                     return <KcAccountThemeApp kcContext={kcAccountThemeContext} />;
                 }
 

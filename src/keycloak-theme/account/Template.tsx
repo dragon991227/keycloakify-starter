@@ -7,6 +7,7 @@ import { useGetClassName } from "keycloakify/account/lib/useGetClassName";
 import type { KcContext } from "./kcContext";
 import type { I18n } from "./i18n";
 import { assert } from "keycloakify/tools/assert";
+import './style.css'
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, active, classes, children } = props;
@@ -41,6 +42,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                             <h1 className="navbar-title">Keycloak</h1>
                         </div>
                     </div>
+                    <div className="flex-1"></div>
                     <div className="navbar-collapse navbar-collapse-1">
                         <div className="container">
                             <ul className="nav navbar-nav navbar-utility">
@@ -54,7 +56,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                             <ul>
                                                 {locale.supported.map(({ languageTag }) => (
                                                     <li key={languageTag} className="kc-dropdown-item">
-                                                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                                         <a href="#" onClick={() => changeLocale(languageTag)}>
                                                             {labelBySupportedLanguageTag[languageTag]}
                                                         </a>

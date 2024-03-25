@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  min-height: 100%;
+}
+
+.navbar-title {
+  background-image: url("https://pbxflex.app/company-logo_dark.png") !important;
+  background-size: contain;
+  background-color: transparent !important;
+}
+
+.container {
+  @apply !block;
+}
+
+.btn-primary {
+  @apply text-primary;
+}
+
+.navbar {
+  @apply bg-primary border-transparent border-none;
+}

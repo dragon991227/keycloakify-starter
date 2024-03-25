@@ -185,11 +185,12 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                         <ul
                             className={clsx(
                                 getClassName("kcFormSocialAccountListClass"),
-                                social.providers.length > 4 && getClassName("kcFormSocialAccountDoubleListClass")
+                                social.providers.length > 4 && getClassName("kcFormSocialAccountDoubleListClass"),
+                                // "flex flex-wrap items-center"
                             )}
                         >
                             {social.providers.map(p => (
-                                <li key={p.providerId} className={getClassName("kcFormSocialAccountListLinkClass")}>
+                                <li key={p.providerId} className={clsx(getClassName("kcFormSocialAccountListLinkClass"))}>
                                     <a href={p.loginUrl} id={`zocial-${p.alias}`} className={clsx("zocial", p.providerId)}>
                                         <span>{p.displayName}</span>
                                     </a>
