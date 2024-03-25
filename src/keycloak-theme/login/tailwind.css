@@ -28,7 +28,7 @@ label {
 }
 
 .kcFormOptionsWrapperClass {
-  @apply flex justify-end text-primary text-xs py-3;
+  @apply flex justify-end !text-primary text-xs py-3;
 }
 
 #kc-registration {
