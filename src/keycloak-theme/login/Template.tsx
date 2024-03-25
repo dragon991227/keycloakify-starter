@@ -1,7 +1,7 @@
 // Copy pasted from: https://github.com/InseeFrLab/keycloakify/blob/main/src/login/Template.tsx
 
 import { useState, useEffect } from "react";
-import { assert } from "keycloakify/tools/assert";
+// import { assert } from "keycloakify/tools/assert";
 import { clsx } from "keycloakify/tools/clsx";
 import { usePrepareTemplate } from "keycloakify/lib/usePrepareTemplate";
 import { type TemplateProps } from "keycloakify/login/TemplateProps";
@@ -30,9 +30,11 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { getClassName } = useGetClassName({ doUseDefaultCss, classes });
 
-    const { msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag } = i18n;
+    // const { msg, changeLocale, labelBySupportedLanguageTag, currentLanguageTag } = i18n;
+    const { msg } = i18n;
 
-    const { realm, locale, auth, url, message, isAppInitiatedAction } = kcContext;
+    // const { realm, locale, auth, url, message, isAppInitiatedAction } = kcContext;
+    const { realm, auth, url, message, isAppInitiatedAction } = kcContext;
 
     const { isReady } = usePrepareTemplate({
         "doFetchDefaultThemeResources": doUseDefaultCss,
